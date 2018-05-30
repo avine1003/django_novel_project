@@ -1,0 +1,11 @@
+Django==1.11.8
+Pillow==5.1.0
+PyMySQL==0.8.1
+pytz==2018.4
+six
+future
+httplib2
+django-reversion
+django-formtools
+django-crispy-forms
+django-import-export
