@@ -8,16 +8,12 @@ from django.shortcuts import render, HttpResponse
 
 
 def index_handler(request):
-    url = request.path
-    print('IndexHandler:enter url:' + url)
+    # url = request.path
     tags = Tag.objects.all()
-
     # 文章列表
-    t = request.GET.get('t', 0)
+    t = int(request.GET.get('t', 0))
     # page = self.get_argument("page", 1)
-    page = request.GET.get("page", 1)
-    page = int(page)
-    t = int(t)
+    page = int(request.GET.get("page", 1))
     if t == 0:
         # sql = "select count(*) from art"
         total = len(Art.objects.all())

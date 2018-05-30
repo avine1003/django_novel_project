@@ -15,7 +15,6 @@ class Tag(models.Model):
         db_table = 'tag'
         verbose_name = '标签'
         verbose_name_plural = '标签'
-        ordering = ['-t_addtime']
 
 
 # 文章表
@@ -31,7 +30,6 @@ class Art(models.Model):
         return self.a_title
 
     class Meta:
-        ordering = ['-a_addtime']
         db_table = 'art'
         verbose_name = '小说'
         verbose_name_plural = '小说'
