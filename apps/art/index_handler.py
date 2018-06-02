@@ -6,9 +6,11 @@ __author__ = "wuyou"
 __date__ = "2018/5/29 15:00"
 from django.shortcuts import render, HttpResponse
 
+from django_project.settings import logger
 
 def index_handler(request):
     # url = request.path
+    logger.info("IndexHandler request Handler begin")
     tags = Tag.objects.all()
     # 文章列表
     t = int(request.GET.get('t', 0))
@@ -84,4 +86,5 @@ def index_handler(request):
             page=page,
             t=t
         )
+        logger.debug('query total:' + str(total))
     return render(request, "home/index.html", context=context)

@@ -7,9 +7,11 @@ from art.models import Art
 
 __author__ = "wuyou"
 __date__ = "2018/5/30 9:29"
+from django_project.settings import logger
 
 
 def search_handler(request):
+    logger.info("search_handler request Handler begin")
     key = request.GET.get("key", "")  # 获取输入参数key对应的值，默认为空
     if key == "":
         return HttpResponseRedirect("/")

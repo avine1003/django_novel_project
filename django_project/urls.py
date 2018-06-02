@@ -21,4 +21,6 @@ import xadmin
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
     url('art/', include('art.urls')),
+    url(r'^ueditor/', include('DjangoUeditor.urls')),
+    url(r'^message/', include("message.urls"))
 ]

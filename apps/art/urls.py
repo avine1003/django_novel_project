@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from art import views, search_handler, detail_handler
+from art.statistic_handler import histogram_handler
 
 __author__ = "wuyou"
 __date__ = "2018/5/29 14:33"
@@ -24,6 +25,9 @@ urlpatterns = [
     url('index/', index_handler.index_handler),
     url('search/', search_handler.search_handler),
     url('detail/', detail_handler.detail_handler),
+    url('add/', views.add_handler),
+    url('shtml/', views.render_index),
+    url('histogram/', histogram_handler),
 
 ]
 

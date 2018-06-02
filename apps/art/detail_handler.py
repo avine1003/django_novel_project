@@ -3,16 +3,16 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from art.models import Art
+from django_project.settings import logger
 
 __author__ = "wuyou"
 __date__ = "2018/5/30 10:50"
 
 
 def detail_handler(request):
-    print('DetailHandler#enter!')
+    logger.info("detailHandler request Handler begin")
     # id = self.get_argument("id", None)
     id = request.GET.get("id", None)
-    print('DetailHandler#id:' + str(id))
     if id == None:
         return HttpResponseRedirect("/art/index")
     else:
